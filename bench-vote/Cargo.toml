@@ -30,5 +30,5 @@ solana-transaction = { workspace = true }
 solana-version = { workspace = true }
 solana-vote-program = { workspace = true }
 
-[target.'cfg(not(any(target_env = "msvc", target_os = "freebsd")))'.dependencies]
+[target.'cfg(not(any(target_env = "msvc", target_os = "freebsd", target_os = "openbsd")))'.dependencies]
 jemallocator = { workspace = true }

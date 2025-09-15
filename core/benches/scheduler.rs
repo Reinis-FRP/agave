@@ -1,4 +1,4 @@
-#[cfg(not(any(target_env = "msvc", target_os = "freebsd")))]
+#[cfg(not(any(target_env = "msvc", target_os = "freebsd", target_os = "openbsd")))]
 use jemallocator::Jemalloc;
 #[path = "receive_and_buffer_utils.rs"]
 mod utils;
@@ -23,7 +23,7 @@ use {
     std::time::{Duration, Instant},
 };
 
-#[cfg(not(any(target_env = "msvc", target_os = "freebsd")))]
+#[cfg(not(any(target_env = "msvc", target_os = "freebsd", target_os = "openbsd")))]
 #[global_allocator]
 static GLOBAL: Jemalloc = Jemalloc;
 // a bench consumer worker that quickly drain work channel, then send a OK back via completed-work

@@ -837,10 +837,10 @@ fn record_transactions(
     }
 }
 
-#[cfg(not(any(target_env = "msvc", target_os = "freebsd")))]
+#[cfg(not(any(target_env = "msvc", target_os = "freebsd", target_os = "openbsd")))]
 use jemallocator::Jemalloc;
 
-#[cfg(not(any(target_env = "msvc", target_os = "freebsd")))]
+#[cfg(not(any(target_env = "msvc", target_os = "freebsd", target_os = "openbsd")))]
 #[global_allocator]
 static GLOBAL: Jemalloc = Jemalloc;
 

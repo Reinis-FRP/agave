@@ -3,7 +3,7 @@ use {
     solana_perf::{discard::discard_batches_randomly, packet::to_packet_batches, test_tx::test_tx},
 };
 
-#[cfg(not(any(target_env = "msvc", target_os = "freebsd")))]
+#[cfg(not(any(target_env = "msvc", target_os = "freebsd", target_os = "openbsd")))]
 #[global_allocator]
 static GLOBAL: jemallocator::Jemalloc = jemallocator::Jemalloc;
 

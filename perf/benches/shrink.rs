@@ -10,7 +10,7 @@ use {
     std::iter,
 };
 
-#[cfg(not(any(target_env = "msvc", target_os = "freebsd")))]
+#[cfg(not(any(target_env = "msvc", target_os = "freebsd", target_os = "openbsd")))]
 #[global_allocator]
 static GLOBAL: jemallocator::Jemalloc = jemallocator::Jemalloc;
 

@@ -92,7 +92,7 @@ solana-vote-program = { workspace = true }
 thiserror = { workspace = true }
 tokio = { workspace = true, features = ["full"] }
 
-[target.'cfg(not(any(target_env = "msvc", target_os = "freebsd")))'.dependencies]
+[target.'cfg(not(any(target_env = "msvc", target_os = "freebsd", target_os = "openbsd")))'.dependencies]
 jemallocator = { workspace = true }
 
 [target."cfg(unix)".dependencies]
