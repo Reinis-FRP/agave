@@ -7,10 +7,22 @@ Make sure following build dependency packages are installed:
 Some dependencies require knowledge of `libclang` library paths, so export env before building or installing:
 
 ```sh
-export LD_LIBRARY_PATH=/usr/local/llvm19/lib
-export LIBCLANG_PATH=/usr/local/llvm19/lib/
+export LD_LIBRARY_PATH=/usr/local/llvm21/lib
+export LIBCLANG_PATH=/usr/local/llvm21/lib/
 export CC=/usr/bin/clang
 export CXX=/usr/bin/clang++
+```
+
+On more recent `rust` might need to allow warnings:
+
+```sh
+export RUSTFLAGS="-A warnings"
+```
+
+Increase the data limits and build:
+
+```sh
+ulimit -d 33554432
 cargo build -r
 ```
 
