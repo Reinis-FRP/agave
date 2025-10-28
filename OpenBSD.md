@@ -20,5 +20,6 @@ Install the required binary crates, e.g.:
 cargo install --path ./cli --locked
 cargo install --path ./keygen --locked
 cargo install --path ./validator --locked
+cargo install --path ./platform-tools-sdk/cargo-build-sbf --locked
 ```
 
